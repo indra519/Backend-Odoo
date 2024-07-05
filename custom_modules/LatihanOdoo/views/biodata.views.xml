@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- View Form -->
+<record id="odoo_biodata_form" model="ir.ui.view">
+            <field name="name">odoo.biodata.form</field>
+            <field name="model">odoo.biodata</field>
+            <field name="arch" type="xml">
+                <form string="Biodata">
+                    <sheet>
+                        <group>
+                            <field name="name" string="Nama"/>
+                            <field name="fullname" string="Nama Lengkap"/>
+                            <field name="birthdate" string="Tanggal Lahir"/>
+                            <field name="age" string="Umur"/>
+                            <field name="children" string="Anak"/>
+                            <field name="photo" string="foto"/>
+                            <field name="gender" string="Jenis Kelamin"/>
+                        </group>
+                         <group string="Pendidikan">
+                            <field name="education_sd"/>
+                            <field name="education_smp"/>
+                            <field name="education_sltp"/>
+                            <field name="education_sma"/>
+                            <field name="education_smk"/>
+                            <field name="education_smu"/>
+                            <field name="education_slta"/>
+                            <field name="education_college"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Action Window -->
+        <record id="odoo_biodata_action" model="ir.actions.act_window">
+            <field name="name">Biodata</field>
+            <field name="res_model">odoo.biodata</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Menu Item -->
+        <menuitem id="menu_biodata" name="Biodata" sequence="1" parent="biodata_root" action="odoo_biodata_action"/>
+
+    </data>
+</odoo>
